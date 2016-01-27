@@ -1,0 +1,1 @@
+For the hosted slides, click here http://ah-tunecore.github.io/arel-tech-talk
