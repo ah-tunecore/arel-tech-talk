@@ -144,7 +144,7 @@ Distribution
         </section>
         <section>
           <p>Not much better since its still just embedding SQL into our method calls</p>
-          <p>Is there a way we can write this query using purely <strong>Ruby</strong> code</p>
+          <p>Is there a way we can write this query using purely <strong>Ruby</strong> code?</p>
         </section>
         <section>
           <section>
@@ -178,7 +178,7 @@ distribution[Arel.star]
           <section>
             <p>A sidebar about the joins method</p>
             <pre><code>.joins(petri_bundle: { album: :upcs })</code></pre>
-            <p>Passing joins nested hashes of the associations will let you use ActiveRecords knowledge of the association.</p>
+            <p>Passing joins nested hashes of the associations will let you use ActiveRecord's knowledge of the association.</p>
             <p>Example:</p>
             <pre><code class="hljs" data-trim contenteditable>
 Distribution.joins(:salepoints, petri_bundle: { album: :upcs }).to_sql
@@ -231,8 +231,8 @@ Distribution
           <h3>Building our where clauses</h3>
           <p>Arel comes with a wide assortment of predication and expression methods we can pass to the AR where method</p>
           <p>Lets take a look at a few:<p>
-           <a href="https://github.com/rails/arel/blob/master/lib/arel/predications.rb">Arel Predication Source</a> <br />
-           <a href="https://github.com/rails/arel/blob/master/lib/arel/expressions.rb">Arel Expression Source</a>
+           <a target="_blank" href="https://github.com/rails/arel/blob/master/lib/arel/predications.rb">Arel Predication Source</a> <br />
+           <a target="_blank" href="https://github.com/rails/arel/blob/master/lib/arel/expressions.rb">Arel Expression Source</a>
         </section>
         <section>
           <p>Using these on our where</p>
@@ -286,10 +286,9 @@ Distribution
           <p>Putting this in an object that can be reused.</p>
           <ul>
             <li>There are many ways to implement a query building object.</li>
-            <li>One option: Use reflector methods to be able to chain methods off the instance</li>
+            <li>One option: Use reflector methods to be able to chain methods off the instance. <a target="_blank" href="https://github.com/tunecore/tc-www/blob/master/app/models/distribution/distribution_retry_query_builder.rb">Example</a></li>
             <li>Another option: Use a factory/builder pattern to be able to pass in a hash of options that will build the query for you.</li>
           </ul>
-          <a target="_blank" href="https://github.com/tunecore/tc-www/blob/master/app/models/distribution/distribution_retry_query_builder.rb">Example Query builder using reflection</a>
         </section>
         <section>
           <p>Some other things you can do with Arel.</p>
@@ -298,6 +297,7 @@ Distribution
             <li>Pass objects to the joins methods that represent OUTER, FULL OUTER, RIGHT OUTER, etc.. joins</li>
             <li>You can even define NameFunctions for DB specific methods like COALESCE</li>
             <li>Perform nested selects</li>
+            <li>NOTE: Arel documentation is scarce so best bet is to read some source code.</li>
           </ul>
         </section>
         <section>
@@ -308,6 +308,7 @@ Distribution
             <li>Can be used on an DB</li>
             <li>Object oriented</li>
             <li>As demonstrated, can be using to build reuable query builder objects</li>
+            <li>Got a lot of this information from <a target="_blank" href="https://www.youtube.com/watch?v=ShPAxNcLm3o">this talk.</a></li>
           </ul>
         </section>
         <section>
